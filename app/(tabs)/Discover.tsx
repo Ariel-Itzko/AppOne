@@ -16,10 +16,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    flexGrow: 1,           // כדי שה-ScrollView יתפוס את כל הגובה
-    justifyContent: 'center', // למרכז אנכית
-    alignItems: 'center',     // למרכז אופקית
-    padding: 20,
+    flexGrow: 1,         
+    justifyContent: 'center', 
+    alignItems: 'center',  
   },
   blackBox: {
     width: 100,
