@@ -1,13 +1,14 @@
+import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 
 export default function LoginScreen() {
 
-    return (
-
 // The Whole Screen Part
+   
+return (
 
 <View style={{ flex: 1 }}>
     <LinearGradient
@@ -20,9 +21,30 @@ export default function LoginScreen() {
 </View>
 
 <Text style={art.MainText}>Hello,</Text>
-<Text style={[art.SubText, { marginTop: 20 }]}>Be part of <Text style={art.SubTextPurple}>CreatorCenter</Text></Text><Text style={art.SubText}>Your Daily BOOST of content ideas,{'\n'}tips and inspiration from leading {'\n'}Content creators</Text>
+<Text style={[art.SubText, { marginTop: 20 }]}>Be part of <Text style={art.SubTextPurple}>CreatorCenter</Text></Text><Text style={art.SubText}>Your Daily BOOST of content ideas,{'\n'}tips and inspiration from leading {'\n'}Content Creators</Text>
 
-</View>      
+<TextInput
+    style={art.EmailInput}
+    placeholder="Enter your email address"
+    placeholderTextColor="#808080"
+    keyboardType="email-address"
+/>
+
+<TextInput
+    style={art.EmailInput}
+    placeholder="Password"
+    placeholderTextColor="#808080"
+    keyboardType="email-address"
+/>
+
+  <Ionicons
+  name='eye'
+  size={30}
+  color="#808080"
+  style={art.Eye} 
+  /> 
+
+</View>
   )
   }
     
@@ -64,8 +86,25 @@ export default function LoginScreen() {
         fontWeight: 'regular',
         marginTop: 30,
         marginLeft: 40,
+    }, 
+
+    EmailInput: {
+        height: 47,
+        backgroundColor: '#ffffff',
+        borderRadius: 20,
+        fontSize: 18, 
+        color: '808080',
+        marginTop: 30,
+        width: '80%',
+        alignSelf: 'center',
+        paddingHorizontal: 20,
+    },
+
+    Eye: {
+        marginTop: -38,
+        marginLeft: 312,
     }
 
 
-
-  })
+  }
+)
