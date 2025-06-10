@@ -48,3 +48,14 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
+Explantin on the project - 
+
+1. אפשר לשנות את השם של התיקיות שבהם נשים את הקבצים רק חשוב לעדכן את זה בקובץ 
+app/_layout.tsx
+איפה שנמצא המידע על המסכים על מנת שלא יופיע צג ניווט בצד העליון של המסך
+
+2. index.tsx 
+זה קובץ שנועד על מנת שאוכל להציג איזה מסך שארצה בסימולוטור, אני פשוט נכנס אל הקובץ ומשנה את ההפניה אל המסך שארצה. זה השם שלו כי זה השם שהמערכת מחפשת דבר ראשון וככה זה יקפוץ ראשון ויפנה לאן שצריך
