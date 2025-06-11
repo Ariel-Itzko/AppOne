@@ -10,7 +10,6 @@ export default function LoginScreen() {   // The Whole Screen Part
 
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const validateEmail = (email: string): boolean => {
@@ -78,16 +77,6 @@ color="#808080"
 >
   <Text style={art.SignInButtonText}>Sign In</Text>
 </TouchableOpacity>
-
-
-
-
-<TouchableOpacity 
-style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 60, marginTop: 20 }}
-onPress={() => setRememberMe(!rememberMe)}>
-<View style={[art.checkbox, rememberMe && art.checked]} />
-<Text style={art.RememberMe}>Remember Me</Text>
-</TouchableOpacity>
   
 
 <TouchableOpacity onPress={() => router.push('/UserAuth/ForgotPass/ForgotOne')}>
@@ -102,6 +91,21 @@ onPress={() => setRememberMe(!rememberMe)}>
 </TouchableOpacity>
 
 <Text style={art.SignWith}>Sign in with your account</Text>
+
+
+<View style={art.socialbuttonscontainer}>
+    
+    <TouchableOpacity style={art.socialbuttons}
+        onPress={() => console.log('Login with Google')} >
+        <Ionicons name="logo-google" size= {30} color="#AF52DE" />
+     </TouchableOpacity>
+    
+     <TouchableOpacity style={art.socialbuttons}
+      onPress={() => console.log('Login with Apple')}>
+     <Ionicons name="logo-apple" size={30} color="black" />
+     </TouchableOpacity>
+
+</View>
 
 
 </View>
@@ -186,11 +190,6 @@ onPress={() => setRememberMe(!rememberMe)}>
     width: '80%',
     alignSelf: 'center',
     marginTop: 65,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 4,
-    elevation: 5,
     },
 
     SignInButtonText: {
@@ -200,40 +199,20 @@ onPress={() => setRememberMe(!rememberMe)}>
     textAlign: 'center',
     },
 
-    RememberMe: {
-        color: 'white',
-        fontSize: 14,
-        fontFamily: 'Montserrat-regular',
-        marginTop: -185,
-        marginLeft: 5,
-    },
-
     Forget: {
-        color: '#d580ff',
+        color: '#5AC8FA',
         fontSize: 14,
         fontFamily: 'Montserrat-regular',
-        marginTop: -101.5,
-        marginLeft: 200,
+        marginTop: -85,
+        marginLeft: 0,
+        alignSelf: 'center',
     },
-
-    checkbox: {
-        width: 18,
-        height: 18,
-        borderWidth: 2,
-        borderColor: '#fff',
-        borderRadius: 4,
-        marginTop: -185,
-        marginLeft: -12,},
-
-    checked: {
-        backgroundColor: '#AF52DE',
-},
 
 DontAccount: {
       color: 'white',
         fontSize: 14,
         fontFamily: 'Montserrat-regular',
-        marginTop: 0,
+        marginTop: 15,
         marginLeft: 0,
         alignSelf: 'center',
 },
@@ -255,6 +234,23 @@ SignWith: {
         marginLeft: 0,
         alignSelf: 'center',
 },
+
+socialbuttonscontainer: {
+  flexDirection: 'row',
+  justifyContent: 'center',
+  gap: 20,
+  marginTop: 30,
+},
+
+socialbuttons: {
+  width: 60,
+  height: 60,
+  borderRadius: 30,
+  backgroundColor: 'white',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+
 
 
 
