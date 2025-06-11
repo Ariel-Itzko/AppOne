@@ -90,18 +90,26 @@ onPress={() => setRememberMe(!rememberMe)}>
 </TouchableOpacity>
   
 
-<TouchableOpacity onPress={() => router.push('/UserAuth/ForgotPass/ForgotOne')}>
+<TouchableOpacity onPress={() => console.log("vhhsv")}>
 <Text style={art.Forget}>Forgot Your Password?</Text>
 </TouchableOpacity>
 
 
 <Text style={art.DontAccount}>Don't have an account yet?</Text>
 
-<TouchableOpacity onPress={() => router.push('/UserAuth/SignUp/SignOne')}>
+<TouchableOpacity onPress={() => console.log('Take Me To Sign Up !')}>
 <Text style={art.SignUp}>Sign Up Here</Text>
 </TouchableOpacity>
 
-<Text style={art.SignWith}>Sign in with your account</Text>
+<Text style={art.SignWith}>You are going to Sign Up !</Text>
+
+
+<TouchableOpacity style={art.backbutton} onPress={() => router.back()}>
+  <Ionicons name="arrow-back"
+   size={24}
+   color="white" />
+</TouchableOpacity>
+
 
 
 </View>
@@ -255,6 +263,11 @@ SignWith: {
         marginLeft: 0,
         alignSelf: 'center',
 },
+
+backbutton: {
+  marginTop: -600,
+  marginLeft: 20,
+}
 
 
 
