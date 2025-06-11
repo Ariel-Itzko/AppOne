@@ -1,12 +1,12 @@
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import React from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 
-export default function LoginScreen() {
+export default function LoginScreen() {   // The Whole Screen Part
 
-// The Whole Screen Part
+    const [showPassword, setShowPassword] = useState(false);
    
 return (
 
@@ -31,18 +31,27 @@ return (
 />
 
 <TextInput
-    style={art.EmailInput}
+    style={art.PasswordInput}
     placeholder="Password"
     placeholderTextColor="#808080"
     keyboardType="email-address"
+    secureTextEntry={!showPassword}
 />
 
-  <Ionicons
-  name='eye'
+ <TouchableOpacity style={art.Eye} 
+  onPress={() => setShowPassword(!showPassword)}>
+ <Ionicons
+  name={showPassword ? 'eye-off' : 'eye'}
   size={30}
   color="#808080"
-  style={art.Eye} 
-  /> 
+  /> </TouchableOpacity>
+
+ 
+  <TouchableOpacity style={art.SignInButton}
+   onPress={()=> console.log('Login pressed')}>
+  
+  <Text style={art.SignInButtonText}>Sign In</Text>
+  </TouchableOpacity>
 
 </View>
   )
@@ -56,34 +65,34 @@ return (
         marginTop: 90,
         justifyContent: 'center',
         gap: 0 // gap between the circles
-    } ,
+    },
 
-    circle:{
+    circle: {
         width: 50,
         height: 50,
         borderRadius: 25,
     },
 
-    MainText:{
+    MainText: {
         color: 'white',
         fontSize: 50,
-        fontWeight: 'bold',
+        fontFamily: 'Montserrat-Bold',
         marginTop: 60,
         marginLeft: 40,
     },
 
-    SubText:{
+    SubText: {
         color: 'white',
-        fontSize: 20,
-        fontWeight: 'regular',
+        fontSize: 18,
+        fontFamily: 'Montserrat-SemiBold',
         marginTop: 0,
         marginLeft: 40,
     }, 
 
-    SubTextPurple:{
+    SubTextPurple: {
         color: '#AF52DE',
         fontSize: 20,
-        fontWeight: 'regular',
+        fontFamily: 'Montserrat-SemiBold',
         marginTop: 30,
         marginLeft: 40,
     }, 
@@ -100,10 +109,49 @@ return (
         paddingHorizontal: 20,
     },
 
+    PasswordInput: {
+        height: 47,
+        backgroundColor: '#ffffff',
+        borderRadius: 20,
+        fontSize: 18, 
+        color: '808080',
+        marginTop: 30,
+        width: '80%',
+        alignSelf: 'center',
+        paddingHorizontal: 20,
+        paddingRight: 60,
+    },
+
     Eye: {
         marginTop: -38,
         marginLeft: 312,
-    }
+    },
+
+    SignInButton:{
+    backgroundColor: '#AF52DE',
+    borderRadius: 25,
+    paddingVertical: 12,
+    fontFamily: 'Montserrat-SemiBold',
+    width: '80%',
+    alignSelf: 'center',
+    marginTop: 40,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 5,
+    },
+
+    SignInButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+}
+
+
+
+
 
 
   }
