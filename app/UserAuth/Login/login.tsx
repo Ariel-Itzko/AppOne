@@ -40,34 +40,41 @@ return (
     secureTextEntry={!showPassword}
 />
 
- <TouchableOpacity style={art.Eye} 
-  onPress={() => setShowPassword(!showPassword)}>
- <Ionicons
-  name={showPassword ? 'eye-off' : 'eye'}
-  size={30}
-  color="#808080"
-  /> </TouchableOpacity>
+<TouchableOpacity style={art.Eye} 
+onPress={() => setShowPassword(!showPassword)}>
+<Ionicons
+name={showPassword ? 'eye-off' : 'eye'}
+size={30}
+color="#808080"
+/> </TouchableOpacity>
 
  
-  <TouchableOpacity style={art.SignInButton}
-   onPress={()=> console.log('I Want To Sign In !')}>
-  <Text style={art.SignInButtonText}>Sign In</Text>
-  </TouchableOpacity>
+<TouchableOpacity style={art.SignInButton}
+onPress={()=> console.log('I Want To Sign In !')}>
+<Text style={art.SignInButtonText}>Sign In</Text>
+</TouchableOpacity>
 
 
-  <TouchableOpacity 
-  style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 60, marginTop: 20 }}
-  onPress={() => setRememberMe(!rememberMe)}
->
-  <View style={[art.checkbox, rememberMe && art.checked]} />
-  <Text style={art.RememberMe}>Remember Me</Text>
-  </TouchableOpacity>
+<TouchableOpacity 
+style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 60, marginTop: 20 }}
+onPress={() => setRememberMe(!rememberMe)}>
+<View style={[art.checkbox, rememberMe && art.checked]} />
+<Text style={art.RememberMe}>Remember Me</Text>
+</TouchableOpacity>
   
-  <TouchableOpacity onPress={() => console.log('I Forgot My Password !')}>
-  <Text style={art.Forget}>Forgot Your Password?</Text>
-  </TouchableOpacity>
+
+<TouchableOpacity onPress={() => console.log('I Forgot My Password !')}>
+<Text style={art.Forget}>Forgot Your Password?</Text>
+</TouchableOpacity>
 
 
+<Text style={art.DontAccount}>Don't have an account yet?</Text>
+
+<TouchableOpacity onPress={() => console.log('Take Me To Sign Up !')}>
+<Text style={art.SignUp}>Sign Up Here</Text>
+</TouchableOpacity>
+
+<Text style={art.SignWith}>Sign in with your account</Text>
 
 
 </View>
@@ -94,7 +101,7 @@ return (
         color: 'white',
         fontSize: 50,
         fontFamily: 'Montserrat-Bold',
-        marginTop: 60,
+        marginTop: 25,
         marginLeft: 40,
     },
 
@@ -194,6 +201,36 @@ return (
     checked: {
         backgroundColor: '#AF52DE',
 },
+
+DontAccount: {
+      color: 'white',
+        fontSize: 14,
+        fontFamily: 'Montserrat-regular',
+        marginTop: 0,
+        marginLeft: 0,
+        alignSelf: 'center',
+},
+
+SignUp: {
+      color: '#d580ff',
+        fontSize: 14,
+        fontFamily: 'Montserrat-regular',
+        marginTop: 5,
+        marginLeft: 0,
+        alignSelf: 'center',
+},
+
+SignWith: {
+      color: 'white',
+        fontSize: 14,
+        fontFamily: 'Montserrat-regular',
+        marginTop: 30,
+        marginLeft: 0,
+        alignSelf: 'center',
+},
+
+
+
 
 
 
