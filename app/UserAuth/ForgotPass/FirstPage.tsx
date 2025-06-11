@@ -90,7 +90,7 @@ onPress={() => setRememberMe(!rememberMe)}>
 </TouchableOpacity>
   
 
-<TouchableOpacity onPress={() => router.push('/UserAuth/ForgotPass/FirstPage')}>
+<TouchableOpacity onPress={() => console.log("vhhsv")}>
 <Text style={art.Forget}>Forgot Your Password?</Text>
 </TouchableOpacity>
 
@@ -101,7 +101,18 @@ onPress={() => setRememberMe(!rememberMe)}>
 <Text style={art.SignUp}>Sign Up Here</Text>
 </TouchableOpacity>
 
-<Text style={art.SignWith}>Sign in with your account</Text>
+<Text style={art.SignWith}>Let's reset your password !</Text>
+
+
+<TouchableOpacity
+  style={art.backbutton}
+  onPress={() => router.back()}
+>
+  <Ionicons name="arrow-back"
+   size={24}
+   color="white" />
+</TouchableOpacity>
+
 
 
 </View>
@@ -255,6 +266,11 @@ SignWith: {
         marginLeft: 0,
         alignSelf: 'center',
 },
+
+backbutton: {
+  marginTop: -600,
+  marginLeft: 20,
+}
 
 
 
