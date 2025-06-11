@@ -7,6 +7,8 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 export default function LoginScreen() {   // The Whole Screen Part
 
     const [showPassword, setShowPassword] = useState(false);
+    const [rememberMe, setRememberMe] = useState(false);
+
    
 return (
 
@@ -48,10 +50,25 @@ return (
 
  
   <TouchableOpacity style={art.SignInButton}
-   onPress={()=> console.log('Login pressed')}>
-  
+   onPress={()=> console.log('I Want To Sign In !')}>
   <Text style={art.SignInButtonText}>Sign In</Text>
   </TouchableOpacity>
+
+
+  <TouchableOpacity 
+  style={{ flexDirection: 'row', alignItems: 'center', marginLeft: 60, marginTop: 20 }}
+  onPress={() => setRememberMe(!rememberMe)}
+>
+  <View style={[art.checkbox, rememberMe && art.checked]} />
+  <Text style={art.RememberMe}>Remember Me</Text>
+  </TouchableOpacity>
+  
+  <TouchableOpacity onPress={() => console.log('I Forgot My Password !')}>
+  <Text style={art.Forget}>Forgot Your Password?</Text>
+  </TouchableOpacity>
+
+
+
 
 </View>
   )
@@ -90,7 +107,7 @@ return (
     }, 
 
     SubTextPurple: {
-        color: '#AF52DE',
+        color: '#d580ff',
         fontSize: 20,
         fontFamily: 'Montserrat-SemiBold',
         marginTop: 30,
@@ -134,7 +151,7 @@ return (
     fontFamily: 'Montserrat-SemiBold',
     width: '80%',
     alignSelf: 'center',
-    marginTop: 40,
+    marginTop: 65,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
@@ -147,7 +164,37 @@ return (
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
-}
+    },
+
+    RememberMe: {
+        color: 'white',
+        fontSize: 14,
+        fontFamily: 'Montserrat-regular',
+        marginTop: -185,
+        marginLeft: 5,
+    },
+
+    Forget: {
+        color: '#d580ff',
+        fontSize: 14,
+        fontFamily: 'Montserrat-regular',
+        marginTop: -101.5,
+        marginLeft: 200,
+    },
+
+    checkbox: {
+        width: 18,
+        height: 18,
+        borderWidth: 2,
+        borderColor: '#fff',
+        borderRadius: 4,
+        marginTop: -185,
+        marginLeft: -12,},
+
+    checked: {
+        backgroundColor: '#AF52DE',
+},
+
 
 
 
