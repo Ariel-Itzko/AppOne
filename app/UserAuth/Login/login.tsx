@@ -40,8 +40,7 @@ return (
     placeholderTextColor="#808080"
     keyboardType="email-address"
     value={email}
-    onChangeText={(text) => {setEmail(text); setEmailError('');}}
-/>
+    onChangeText={(text) => {setEmail(text); setEmailError('');}}/>
 {emailError !== '' && (
   <Text style={{ color: 'red', marginLeft: 50, marginTop: 13 }}>
     {emailError}
@@ -79,7 +78,7 @@ color="#808080"
 </TouchableOpacity>
   
 
-<TouchableOpacity onPress={() => router.push('/UserAuth/ForgotPass/ForgotOne')}>
+<TouchableOpacity onPress={() => console.log('Forgot Password')}>
 <Text style={art.Forget}>Forgot Your Password?</Text>
 </TouchableOpacity>
 
@@ -94,7 +93,6 @@ color="#808080"
 
 
 <View style={art.socialbuttonscontainer}>
-    
     <TouchableOpacity style={art.socialbuttons}
         onPress={() => console.log('Login with Google')} >
         <Ionicons name="logo-google" size= {30} color="#AF52DE" />
@@ -104,7 +102,6 @@ color="#808080"
       onPress={() => console.log('Login with Apple')}>
      <Ionicons name="logo-apple" size={30} color="black" />
      </TouchableOpacity>
-
 </View>
 
 
