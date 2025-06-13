@@ -66,7 +66,7 @@ SubTextPurple: {
     height: 200,
     resizeMode: 'contain',
     alignSelf: 'center',
-    marginTop: 60,
+    marginTop: 32,
  },
 
 SignInButton:{

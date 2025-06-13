@@ -72,7 +72,7 @@ color="#808080"
 </TouchableOpacity>
   
 
-<TouchableOpacity onPress={() => console.log('Forgot Password')}>
+<TouchableOpacity onPress={() => router.push('/UserAuth/ForgotPass/Forgot')}>
 <Text style={art.Forget}>Forgot Your Password?</Text>
 </TouchableOpacity>
 
@@ -186,13 +186,13 @@ SignInButton:{
 SignInButtonText: {
   color: 'white',
   fontSize: 18,
-  fontWeight: 'bold',
+  fontFamily: 'Montserrat-regular',
   textAlign: 'center',
 },
 
 Forget: {
   color: '#5AC8FA',
-  fontSize: 14,
+  fontSize: 16,
   fontFamily: 'Montserrat-regular',
   marginTop: -85,
   marginLeft: 0,
@@ -201,7 +201,7 @@ Forget: {
 
 DontAccount: {
   color: 'white',
-  fontSize: 14,
+  fontSize: 16,
   fontFamily: 'Montserrat-regular',
   marginTop: 15,
   marginLeft: 0,
@@ -219,7 +219,7 @@ SignUp: {
 
 SignWith: {
   color: 'white',
-  fontSize: 14,
+  fontSize: 16,
   fontFamily: 'Montserrat-regular',
   marginTop: 30,
   marginLeft: 0,

@@ -10,7 +10,7 @@ const [showPassword, setShowPassword] = useState(false);
 const [password, setPassword] = useState('');
 const isPasswordValid = password.length >= 6;
 const [password2, setPassword2] = useState('');
-const isItValid = password === password2 && password.length >= 6
+const isItValid = password === password2 && password !== '';
 const reallyValid = password === password2 && isPasswordValid;
 const router = useRouter();
 
@@ -75,7 +75,7 @@ color="#808080"
 <Text style={style.WarningText}>Your password must be 6 characters or longer</Text>)}
 
 {!isItValid && (
-<Text style={style.WarningText2}>Passwords do not match</Text>)}
+<Text style={style.WarningText2}>Use the same Password twice for Confirmation</Text>)}
 
 {isItValid && (
 <>
