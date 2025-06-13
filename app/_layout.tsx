@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { LogBox } from 'react-native';
 import 'react-native-reanimated';
 
-LogBox.ignoreLogs(['Text strings must be rendered within a <Text> component']);
+LogBox.ignoreAllLogs(true);
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();

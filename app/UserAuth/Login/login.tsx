@@ -14,8 +14,7 @@ export default function LoginScreen() {   // The Whole Screen Part
     const [emailError, setEmailError] = useState('');
     const validateEmail = (email: string): boolean => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
+        return emailRegex.test(email); }
     
 
 
@@ -41,9 +40,8 @@ return (
     keyboardType="email-address"
     value={email}
     onChangeText={(text) => {setEmail(text); setEmailError('');}}/>
-{emailError !== '' && (
-  <Text style={{ color: 'red', marginLeft: 50, marginTop: 13 }}>
-    {emailError}
+  {emailError !== '' && (
+  <Text style={{ color: 'red', marginLeft: 40, marginTop: 13 }}>{emailError}
   </Text>
 )}
 
@@ -70,11 +68,8 @@ color="#808080"
       console.log('Email Is Valid');
     } else {
       setEmailError('Invalid email address');
-      console.log('Email Is Invalid');
-    }
-  }}
->
-  <Text style={art.SignInButtonText}>Sign In</Text>
+      console.log('Email Is Invalid');}}}>
+<Text style={art.SignInButtonText}>Sign In</Text>
 </TouchableOpacity>
   
 
@@ -102,134 +97,135 @@ color="#808080"
       onPress={() => console.log('Login with Apple')}>
      <Ionicons name="logo-apple" size={30} color="black" />
      </TouchableOpacity>
-</View>
 
+</View>
 
 </View>
   )
   }
     
-  // CSS PART
+// CSS PART
 
-  const art = StyleSheet.create ({
-    circlesContainer: {
-        flexDirection: 'row',
-        marginTop: 90,
-        justifyContent: 'center',
-        gap: 0 // gap between the circles
-    },
+const art = StyleSheet.create ({
 
-    circle: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-    },
+  circlesContainer: {
+  flexDirection: 'row',
+  marginTop: 90,
+  justifyContent: 'center',
+  gap: 0 
+},
 
-    MainText: {
-        color: 'white',
-        fontSize: 50,
-        fontFamily: 'Montserrat-Bold',
-        marginTop: 25,
-        marginLeft: 40,
-    },
+circle: {
+  width: 50,
+  height: 50,
+  borderRadius: 25,
+},
 
-    SubText: {
-        color: 'white',
-        fontSize: 18,
-        fontFamily: 'Montserrat-SemiBold',
-        marginTop: 0,
-        marginLeft: 40,
-    }, 
+MainText: {
+  color: 'white',
+  fontSize: 50,
+  fontFamily: 'Montserrat-Bold',
+  marginTop: 25,
+  marginLeft: 40,
+},
 
-    SubTextPurple: {
+SubText: {
+  color: 'white',
+  fontSize: 18,
+  fontFamily: 'Montserrat-SemiBold',
+  marginTop: 0,
+  marginLeft: 40,
+}, 
+
+SubTextPurple: {
         color: '#d580ff',
         fontSize: 20,
         fontFamily: 'Montserrat-SemiBold',
         marginTop: 30,
         marginLeft: 40,
-    }, 
+}, 
 
-    EmailInput: {
-        height: 47,
-        backgroundColor: '#ffffff',
-        borderRadius: 20,
-        fontSize: 18, 
-        color: '808080',
-        marginTop: 30,
-        width: '80%',
-        alignSelf: 'center',
-        paddingHorizontal: 20,
-    },
+EmailInput: {
+  height: 47,
+  backgroundColor: '#ffffff',
+  borderRadius: 20,
+  fontSize: 18, 
+  color: '808080',
+  marginTop: 30,
+  width: '80%',
+  alignSelf: 'center',
+  paddingHorizontal: 20,
+},
 
-    PasswordInput: {
-        height: 47,
-        backgroundColor: '#ffffff',
-        borderRadius: 20,
-        fontSize: 18, 
-        color: '808080',
-        marginTop: 20,
-        width: '80%',
-        alignSelf: 'center',
-        paddingHorizontal: 20,
-        paddingRight: 60,
-    },
+PasswordInput: {
+  height: 47,
+  backgroundColor: '#ffffff',
+  borderRadius: 20,
+  fontSize: 18, 
+  color: '808080',
+  marginTop: 20,
+  width: '80%',
+  alignSelf: 'center',
+  paddingHorizontal: 20,
+  paddingRight: 60,
+},
 
-    Eye: {
-        marginTop: -38,
-        marginLeft: 312,
-    },
+Eye: {
+  marginTop: -38,
+  marginLeft: 312,
+},
 
-    SignInButton:{
-    backgroundColor: '#AF52DE',
-    borderRadius: 25,
-    paddingVertical: 12,
-    fontFamily: 'Montserrat-SemiBold',
-    width: '80%',
-    alignSelf: 'center',
-    marginTop: 65,
-    },
+SignInButton:{
+  backgroundColor: '#AF52DE',
+  borderRadius: 25,
+  paddingVertical: 12,
+  fontFamily: 'Montserrat-SemiBold',
+  width: '80%',
+  alignSelf: 'center',
+  marginTop: 65,
+},
 
-    SignInButtonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    },
+SignInButtonText: {
+  color: 'white',
+  fontSize: 18,
+  fontWeight: 'bold',
+  textAlign: 'center',
+},
 
-    Forget: {
-        color: '#5AC8FA',
-        fontSize: 14,
-        fontFamily: 'Montserrat-regular',
-        marginTop: -85,
-        marginLeft: 0,
-        alignSelf: 'center',
-    },
+Forget: {
+  color: '#5AC8FA',
+  fontSize: 14,
+  fontFamily: 'Montserrat-regular',
+  marginTop: -85,
+  marginLeft: 0,
+  alignSelf: 'center',
+},
 
 DontAccount: {
-      color: 'white',
-        fontSize: 14,
-        fontFamily: 'Montserrat-regular',
-        marginTop: 15,
-        marginLeft: 0,
-        alignSelf: 'center',
+  color: 'white',
+  fontSize: 14,
+  fontFamily: 'Montserrat-regular',
+  marginTop: 15,
+  marginLeft: 0,
+  alignSelf: 'center',
 },
 
 SignUp: {
-      color: '#d580ff',
-        fontSize: 14,
-        fontFamily: 'Montserrat-regular',
-        marginTop: 5,
-        marginLeft: 0,
-        alignSelf: 'center',
+  color: '#5AC8FA',
+  fontSize: 16,
+  fontFamily: 'Montserrat-regular',
+  marginTop: 5,
+  marginLeft: 0,
+  alignSelf: 'center',
 },
 
 SignWith: {
-      color: 'white',
-        fontSize: 14,
-        fontFamily: 'Montserrat-regular',
-        marginTop: 30,
-        marginLeft: 0,
-        alignSelf: 'center',
+  color: 'white',
+  fontSize: 14,
+  fontFamily: 'Montserrat-regular',
+  marginTop: 30,
+  marginLeft: 0,
+  alignSelf: 'center',
 },
 
 socialbuttonscontainer: {
