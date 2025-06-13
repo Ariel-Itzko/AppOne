@@ -15,8 +15,8 @@ export default function SignOne() {
   const router = useRouter();
 
 
-  return (
-    <>
+return (
+<>
 
 <Text style={style.MainText}>User Sign Up</Text>
 <Text style={style.SubText}>Get started on your Journey{"\n"}with us!</Text>

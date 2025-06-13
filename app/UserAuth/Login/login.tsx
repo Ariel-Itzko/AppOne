@@ -13,8 +13,8 @@ export default function LoginScreen() {   // The Whole Screen Part
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const validateEmail = (email: string): boolean => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email); }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email); }
     
 
 
@@ -49,7 +49,7 @@ return (
     style={art.PasswordInput}
     placeholder="Password"
     placeholderTextColor="#808080"
-    keyboardType="email-address"
+    keyboardType="default"
     secureTextEntry={!showPassword}
 />
 
