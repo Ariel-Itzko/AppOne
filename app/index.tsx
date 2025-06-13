@@ -1,5 +1,5 @@
 import { Redirect } from 'expo-router';
 
 export default function MainScreen() {
-  return <Redirect href="/UserAuth/SignUp/SignTwo" />;
+  return <Redirect href="/UserAuth/Login/login" />;
 }

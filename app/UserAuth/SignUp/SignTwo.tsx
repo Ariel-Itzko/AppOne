@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-
 
 
 export default function SignTwo() { 
@@ -10,8 +10,9 @@ const [showPassword, setShowPassword] = useState(false);
 const [password, setPassword] = useState('');
 const isPasswordValid = password.length >= 6;
 const [password2, setPassword2] = useState('');
-const isItValid = password === password2 && isPasswordValid;
-
+const isItValid = password === password2 && password.length >= 6
+const reallyValid = password === password2 && isPasswordValid;
+const router = useRouter();
 
 
 return (
@@ -73,12 +74,26 @@ color="#808080"
 {!isPasswordValid && (
 <Text style={style.WarningText}>Your password must be 6 characters or longer</Text>)}
 
+{!isItValid && (
+<Text style={style.WarningText2}>Passwords do not match</Text>)}
+
+{isItValid && (
+<>
+<Ionicons
+  name="checkmark-circle"
+  size={24}
+  color="#00C851"
+  style={style.CheckIcon2}/>
+<Text style={style.OkText2}>Passwords match !</Text>
+</>)}
+
 <TouchableOpacity style={style.SetPassword}
 onPress={() => {
-  if (isItValid) {
-    console.log('Passwords match and are valid');}
+  if (reallyValid) {
+    router.push('/UserAuth/SignUp/SignThree')}
   else {
-    console.log('Passwords do not match or are invalid');}
+    alert('Passwords do not match or are invalid')
+    console.log('Passwords do not match or are invalid')}
 }} >
 <Text style={style.SetPasswordText}>Set Password</Text>
 </TouchableOpacity>
@@ -133,7 +148,7 @@ Eye2: {
 CheckIcon:{
   position: 'absolute',
   marginTop: 524,
-  marginLeft: 300,
+  marginLeft: 335,
   alignSelf: 'center',
 },
 
@@ -143,14 +158,16 @@ WarningText: {
   marginTop: 40,
   marginLeft: 0,
   alignSelf: 'center', 
+  fontFamily: 'Montserrat-SemiBold',
 },
 
 OkText: {
   color:"#00C851",
   fontSize: 14,
   marginTop: 40,
-  marginLeft: -45,
+  marginLeft: -30,
   alignSelf: 'center', 
+  fontFamily: 'Montserrat-SemiBold',
 },
 
 SetPassword:{
@@ -166,8 +183,35 @@ SetPassword:{
 SetPasswordText: {
   color: 'white',
   fontSize: 18,
-  fontWeight: 'bold',
+  fontFamily: 'Montserrat-SemiBold',
   textAlign: 'center',
+},
+
+WarningText2: {
+  color: 'white',
+  fontSize: 14,
+  marginTop: 15,
+  marginLeft: 0,
+  alignSelf: 'center', 
+  fontFamily: 'Montserrat-SemiBold',
+
+},
+
+OkText2: {
+  color:"#00C851",
+  fontSize: 14,
+  marginTop: 15,
+  marginLeft: 0,
+  alignSelf: 'center', 
+  fontFamily: 'Montserrat-SemiBold',
+
+},
+
+CheckIcon2:{
+  position: 'absolute',
+  marginTop: 556,
+  marginLeft: 170,
+  alignSelf: 'center',
 },
 
 

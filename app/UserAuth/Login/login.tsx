@@ -8,13 +8,14 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 export default function LoginScreen() {   // The Whole Screen Part
 
 
-    const router = useRouter();
-    const [showPassword, setShowPassword] = useState(false);
-    const [email, setEmail] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const validateEmail = (email: string): boolean => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email); }
+const router = useRouter();
+const [showPassword, setShowPassword] = useState(false);
+const [email, setEmail] = useState('');
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email); }
+const [password, setPassword] = useState('');
+
     
 
 
@@ -39,11 +40,8 @@ return (
     placeholderTextColor="#808080"
     keyboardType="email-address"
     value={email}
-    onChangeText={(text) => {setEmail(text); setEmailError('');}}/>
-  {emailError !== '' && (
-  <Text style={{ color: 'red', marginLeft: 40, marginTop: 13 }}>{emailError}
-  </Text>
-)}
+    onChangeText={(text) => {setEmail(text);}}
+/>
 
 <TextInput
     style={art.PasswordInput}
@@ -51,6 +49,8 @@ return (
     placeholderTextColor="#808080"
     keyboardType="default"
     secureTextEntry={!showPassword}
+    value= {password}
+    onChangeText={(text) => {setPassword(text);}}
 />
 
 <TouchableOpacity style={art.Eye} 
@@ -63,12 +63,11 @@ color="#808080"
 
  
 <TouchableOpacity style={art.SignInButton} onPress={() => {
-    if (validateEmail(email)) {
-      setEmailError('');
-      console.log('Email Is Valid');
-    } else {
-      setEmailError('Invalid email address');
-      console.log('Email Is Invalid');}}}>
+  if (validateEmail(email) && password.length >= 6){
+    console.log('Email and password Is Valid')} 
+  else {
+    alert('The email or password you entered is incorrect'); 
+    console.log('Email or password Is Invalid');}}}>
 <Text style={art.SignInButtonText}>Sign In</Text>
 </TouchableOpacity>
   
@@ -76,7 +75,6 @@ color="#808080"
 <TouchableOpacity onPress={() => console.log('Forgot Password')}>
 <Text style={art.Forget}>Forgot Your Password?</Text>
 </TouchableOpacity>
-
 
 <Text style={art.DontAccount}>Don't have an account yet?</Text>
 
@@ -88,15 +86,15 @@ color="#808080"
 
 
 <View style={art.socialbuttonscontainer}>
-    <TouchableOpacity style={art.socialbuttons}
-        onPress={() => console.log('Login with Google')} >
-        <Ionicons name="logo-google" size= {30} color="#AF52DE" />
-     </TouchableOpacity>
+<TouchableOpacity style={art.socialbuttons}
+  onPress={() => console.log('Login with Google')} >
+  <Ionicons name="logo-google" size= {30} color="#AF52DE" />
+</TouchableOpacity>
     
-     <TouchableOpacity style={art.socialbuttons}
-      onPress={() => console.log('Login with Apple')}>
-     <Ionicons name="logo-apple" size={30} color="black" />
-     </TouchableOpacity>
+<TouchableOpacity style={art.socialbuttons}
+  onPress={() => console.log('Login with Apple')}>
+  <Ionicons name="logo-apple" size={30} color="black" />
+</TouchableOpacity>
 
 </View>
 
@@ -138,11 +136,11 @@ SubText: {
 }, 
 
 SubTextPurple: {
-        color: '#d580ff',
-        fontSize: 20,
-        fontFamily: 'Montserrat-SemiBold',
-        marginTop: 30,
-        marginLeft: 40,
+  color: '#d580ff',
+  fontSize: 20,
+  fontFamily: 'Montserrat-SemiBold',
+  marginTop: 30,
+  marginLeft: 40,
 }, 
 
 EmailInput: {

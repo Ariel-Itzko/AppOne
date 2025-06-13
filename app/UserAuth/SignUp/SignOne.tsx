@@ -8,7 +8,6 @@ import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 export default function SignOne() {
 
   const [email, setEmail] = useState('');
-  const [emailError, setEmailError] = useState('');
   const validateEmail = (email: string): boolean => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email); }
@@ -28,30 +27,22 @@ return (
     placeholderTextColor="#808080"
     keyboardType="email-address"
     value={email}
-    onChangeText={(text) => {setEmail(text); setEmailError('');}}/>
-    {emailError !== '' && (<Text style={{ color: 'red', marginLeft: 40, marginTop: 13 }}>{emailError}
-    </Text> )}
+    onChangeText={(text) => {setEmail(text);}}/>
 
 <Text style={style.regularText}>Sign up using a valid email address.{"\n"}This will be used for creating your own{"\n"}Account.</Text>
 
 <TouchableOpacity style={style.ConfirmButton} onPress={() => {
-        if (validateEmail(email)) {
-        setEmailError('');
-        router.push('/UserAuth/SignUp/SignTwo')}
-        else {
-        setEmailError('Invalid email address');
-        console.log('Email Is Invalid'); }}}>
-        <Text style={style.confirmtext}>Confirm Email</Text>
-        </TouchableOpacity>
+  if (validateEmail(email)) {
+  router.push('/UserAuth/SignUp/SignTwo')}
+  else {
+  alert('Please enter a valid email address')
+  console.log('Email Is Invalid'); }}}>
+  <Text style={style.confirmtext}>Confirm Email</Text>
+</TouchableOpacity>
+
+</>)}
 
 
-
-
-
-
-   </>
-  ) 
-}
 
 const style= StyleSheet.create({
 
@@ -90,6 +81,7 @@ EmailInput: {
   alignSelf: 'center',
   paddingHorizontal: 20,
 },
+
 ConfirmButton: { 
   backgroundColor: '#AF52DE',
   borderRadius: 25,
@@ -99,6 +91,7 @@ ConfirmButton: {
   alignSelf: 'center',
   marginTop: 40,
 },
+
 confirmtext: {
   color: 'white',
   fontSize: 18,
