@@ -40,7 +40,7 @@ return (
 
 
 <Text style={art.MainText}>Hello,</Text>
-<Text style={[art.SubText, { marginTop: 20 }]}>Be part of <Text style={art.SubTextPurple}>CreatorCenter</Text></Text><Text style={art.SubText}>Your Daily BOOST of content ideas,{'\n'}tips and inspiration from leading {'\n'}Content Creators</Text>
+<Text style={[art.SubText, { marginTop: 20 }]}>Be part of <Text style={art.SubTextPurple}>AppOne</Text></Text><Text style={art.SubText}>Your Daily BOOST of ideas, tips{'\n'}and inspiration from leading {'\n'}people in your subject</Text>
 
 
 
