@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-
+import { setTempPassword } from '../../../UserTempData';
 
 
 export default function SignTwo() { 
@@ -106,6 +106,7 @@ color="#808080"
 <TouchableOpacity style={style.SetPassword}
 onPress={() => {
   if (reallyValid) {
+    setTempPassword (password)
     router.push('/UserAuth/SignUp/SignThree')}
   else {
     alert('Passwords do not match or are invalid')

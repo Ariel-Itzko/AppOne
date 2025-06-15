@@ -4,6 +4,12 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 
+import { ref, set } from "firebase/database";
+import { database } from '../../../Firebase/config';
+import { getUserData, setTempUsername } from '../../../UserTempData';
+
+
+
 
 export default function SignThree() {
 
@@ -13,6 +19,27 @@ const usernameValid = username.length >= 5;
 const router = useRouter();
   
 
+async function saveUserData() {
+const userData = getUserData() 
+
+
+try { // חייב טראיי בשביל להשתמש בקאטץ׳ 
+if (!userData.email || !userData.password || !userData.username) {
+alert('There are missing detailes in your sign up process')
+return } // עוצר את כל הפעולה כאן על מנת לא ליצור יוזר לא תקני
+
+await set(ref(database, 'users/' + userData.username), {
+  email: userData.email,
+  password: userData.password,
+  username: userData.username,
+});
+
+  router.push('/UserAuth/SignUp/SignFour')}
+
+  catch (error) { // מונע מהאפליקציה לקרוס ופשוט נותן התראת שגיאה
+      alert('An error happend'); }
+
+}
 
 return (
 
@@ -35,9 +62,10 @@ return (
 
 
 <TouchableOpacity style={style.usernamebutton} 
-onPress={() => {
+onPress={ async () => { // כתוב בפנים את זה כי זה אומר שבתוך הפונקציה יהיה שימוש בפונקציה לחכות - await
   if (usernameValid) {
-    router.push('/UserAuth/SignUp/SignFour')}
+    setTempUsername (username)
+    await saveUserData()}
   else {alert('Your username must be at least 5 characters long.');}}}>
     <Text style={style.Confirm}>CONFIRM</Text>
 </TouchableOpacity>
