@@ -5,8 +5,8 @@ import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 export default function SignThree() {
   
-
 const router = useRouter(); 
+
 
   
 return (

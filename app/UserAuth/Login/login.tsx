@@ -106,7 +106,6 @@ return (
 
 
 
-
 <View style={art.socialbuttonscontainer}>
 <TouchableOpacity style={art.socialbuttons}
   onPress={() => console.log('Login with Google')} >
@@ -268,8 +267,8 @@ socialbuttons: {
 
 
 
-  }
-)
+
+})
 
 
 // העמוד לוגין שמכיל את הבדיקה של המייל, את האופציה לשים סיסמא, להסתיר את הסיסמא את העיצוב כמו בכל העמודים, פה לעומת העמודים האחרים אין קובץ לאייאאוט הכול נמצא פה

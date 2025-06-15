@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "CreatorCenter",
-    "slug": "CreatorCenter",
+    "name": "AppOne",
+    "slug": "AppOne",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "creatorcenter",
+    "scheme": "AppOne",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
