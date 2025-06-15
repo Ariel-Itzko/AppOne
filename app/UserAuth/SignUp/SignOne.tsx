@@ -15,6 +15,7 @@ export default function SignOne() {
 
 
 return (
+
 <>
 
 <Text style={style.MainText}>User Sign Up</Text>
@@ -29,7 +30,11 @@ return (
     value={email}
     onChangeText={(text) => {setEmail(text);}}/>
 
+
+
 <Text style={style.regularText}>Sign up using a valid email address.{"\n"}This will be used for creating your own{"\n"}Account.</Text>
+
+
 
 <TouchableOpacity style={style.ConfirmButton} onPress={() => {
   if (validateEmail(email)) {
@@ -40,7 +45,12 @@ return (
   <Text style={style.confirmtext}>Confirm Email</Text>
 </TouchableOpacity>
 
-</>)}
+
+
+
+</>
+)}
+
 
 
 
@@ -102,12 +112,11 @@ confirmtext: {
 
 
 
-
-
-
-
     
-    })
+})
+
+// העמוד הראשון מכיל את העיצוב מהלאייאאוט בנוסף
+// <> </> הסימנים האלה גורמים לזה שיהיה אפשר להכניס הרבה פונקציות וטקסטים ולא אחת - כותבים את הסגור בלי הסלייש בהתחלה ועם כותבים בסוף
   
 
 

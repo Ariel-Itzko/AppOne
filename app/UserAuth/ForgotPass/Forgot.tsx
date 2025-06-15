@@ -30,7 +30,9 @@ return (
     value={email}
     onChangeText={(text) => {setEmail(text);}}/>
 
+
 <Text style={style.regularText}>We will send you a 6 Digit Verification Code to{"\n"}your email. Make sure to check your{"\n"}inbox and other folders</Text>
+
 
 <TouchableOpacity style={style.ResetButton} onPress={() => {
   if (validateEmail(email)) {
@@ -40,6 +42,7 @@ return (
   console.log('Email Is Invalid'); }}}>
   <Text style={style.Resettext}>Send Reset Link</Text>
 </TouchableOpacity>
+
 
 </>)}
 
@@ -108,12 +111,10 @@ Resettext: {
 
 
 
-
-
-    
 })
   
 
+// עמוד של שכחתי סיסמא שמוודא אם האימייל שכתבנו הוא נכון כמו בעמודים אחרים, ושולח התראה מתאימה אם המייל נכון או לא
 
 
 

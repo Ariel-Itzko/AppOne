@@ -6,7 +6,6 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 
 
-
 export default function SignUpLayout() {
  
   const router = useRouter();
@@ -19,15 +18,17 @@ export default function SignUpLayout() {
   return 0;};
   const steps = ActiveSteps();
  
-  return (
 
-  
-<View style={{ flex: 1 }}>
+
+return (
+
+
+<>
 
 <View style={{ flex: 1 }}>
-  <LinearGradient colors={['#3F0E5D', '#510B7F', '#5F039B', '#7B19BA']}
-  style={StyleSheet.absoluteFill} />
-  <Slot />
+<LinearGradient colors={['#3F0E5D', '#510B7F', '#5F039B', '#7B19BA']}
+style={StyleSheet.absoluteFill} />
+<Slot />
 </View>
 
     
@@ -65,8 +66,9 @@ export default function SignUpLayout() {
 </View>
 
 
+</>
 
-</View>
+
 )}
 
 
@@ -129,5 +131,8 @@ line: {
 
 
 
-
 })
+
+
+
+// העיצוב של כל העמודי סייאן אפ, כולל יצירת משתנה שיוצר את העיגולים שמשתנים לפי מספר העמוד, קיימת פונקציה שבודקת איזה עמוד נמצאים ולפי זה מחזירה מספר ובעזרת המספר זה אומר מה יופיע מבחינת עיצוב ולפי זה זה מראה את האפקט של ההוספת עיגולים בין עמוד לעמוד

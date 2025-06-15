@@ -10,6 +10,7 @@ const router = useRouter();
 
   
 return (
+
 <>
    
    
@@ -17,10 +18,13 @@ return (
 <Text style={style.SubText}><Text style={style.SubTextPurple}>Congratulations!</Text>{"\n"}You have successfully created{"\n"}Your Account</Text>
    
 
+
 <Image
   source={require('../../../assets/images/Rocket.png')}
   style={style.image}
 />
+
+
 
 <TouchableOpacity style={style.SignInButton} 
 onPress={() => {
@@ -30,7 +34,9 @@ onPress={() => {
 
 
 
-</>)}
+
+</>
+)}
 
 const style= StyleSheet.create({
 
@@ -90,3 +96,5 @@ SignInButtonText: {
 
 
 })
+
+// העמוד הרביעי מכיל תמונה שמופיע במרכז העמוד והוא מתריע על הצלחת רישום המשתמש

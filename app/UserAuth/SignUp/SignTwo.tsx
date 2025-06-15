@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 
+
 export default function SignTwo() { 
     
 const [showPassword, setShowPassword] = useState(false);
@@ -23,6 +24,7 @@ return (
 <Text style={style.SubText}>Set a strong & unique password{"\n"}for your Account</Text>
 
 
+
 <TextInput
     style={style.PasswordInput}
     placeholder="Password"
@@ -32,6 +34,8 @@ return (
     value={password}
     onChangeText={setPassword}
 />
+
+
 
 <TextInput
     style={style.PasswordInput}
@@ -44,6 +48,7 @@ return (
 />
 
 
+
 <TouchableOpacity style={style.Eye1} 
 onPress={() => setShowPassword(!showPassword)}>
 <Ionicons
@@ -51,6 +56,8 @@ name={showPassword ? 'eye-off' : 'eye'}
 size={30}
 color="#808080"
 /></TouchableOpacity>
+
+
 
 <TouchableOpacity style={style.Eye2} 
 onPress={() => setShowPassword(!showPassword)}>
@@ -61,6 +68,7 @@ color="#808080"
 /></TouchableOpacity>
 
 
+
 {isPasswordValid && (
 <>
 <Ionicons
@@ -69,13 +77,18 @@ color="#808080"
   color="#00C851"
   style={style.CheckIcon}/>
 <Text style={style.OkText}>Your password must be 6 characters or longer</Text>
-</>)}
+</>
+)}
+
+
 
 {!isPasswordValid && (
 <Text style={style.WarningText}>Your password must be 6 characters or longer</Text>)}
 
+
 {!isItValid && (
 <Text style={style.WarningText2}>Use the same Password twice for Confirmation</Text>)}
+
 
 {isItValid && (
 <>
@@ -85,7 +98,10 @@ color="#808080"
   color="#00C851"
   style={style.CheckIcon2}/>
 <Text style={style.OkText2}>Passwords match !</Text>
-</>)}
+</>
+)}
+
+
 
 <TouchableOpacity style={style.SetPassword}
 onPress={() => {
@@ -219,5 +235,6 @@ CheckIcon2:{
 
 
 
-
 })
+
+// העמוד השני מכיל את העיצוב ואת הסיסמא והפונקציה של הלהסתיר את הסיסמא ובדיקה אם היא תקינה - 6 אותיות לפחות וזהה לקונפירם פאסוורד
