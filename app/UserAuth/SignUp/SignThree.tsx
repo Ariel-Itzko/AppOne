@@ -4,84 +4,46 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 
 
-import { ref, set } from "firebase/database";
-import { database } from '../../../Firebase/config';
-import { getUserData, setTempUsername } from '../../../UserTempData';
-
-
-
 
 export default function SignThree() {
-
   
-const [username, setusername] = useState('');
-const usernameValid = username.length >= 5;
-const router = useRouter();
-  
-
-async function saveUserData() {
-const userData = getUserData() 
-
-
-try { // חייב טראיי בשביל להשתמש בקאטץ׳ 
-if (!userData.email || !userData.password || !userData.username) {
-alert('There are missing detailes in your sign up process')
-return } // עוצר את כל הפעולה כאן על מנת לא ליצור יוזר לא תקני
-
-await set(ref(database, 'users/' + userData.username), {
-  email: userData.email,
-  password: userData.password,
-  username: userData.username,
-});
-
-  router.push('/UserAuth/SignUp/SignFour')}
-
-  catch (error) { // מונע מהאפליקציה לקרוס ופשוט נותן התראת שגיאה
-      alert('An error happend'); }
-
-}
+  const [username, setUsername] = useState('');
+  const usernameValid = username.length >= 5;
+  const router = useRouter();
 
 return (
-
 <>
-   
-   
 <Text style={style.MainText}>User Sign Up</Text>
-<Text style={style.SubText}>Nice! You have <Text style={style.SubTextPurple}>successfully {'\n'}created</Text> your account.{"\n"}Set a username for your Account.</Text>
-
+<Text style={style.SubText}>
+Nice! You have <Text style={style.SubTextPurple}>successfully{'\n'}created</Text> your account.{"\n"}Set a username for your Account.
+</Text>
 
 <TextInput
-    style={style.username}
-    placeholder="Your Username"
-    onChangeText={(text) => setusername(text)}
-    placeholderTextColor="#808080"
-    keyboardType="default"
-    value={username}
-/>   
+  style={style.username}
+  placeholder="Your Username"
+  onChangeText={setUsername}
+  placeholderTextColor="#808080"
+  value={username}
+/>
 
-
-
-<TouchableOpacity style={style.usernamebutton} 
-onPress={ async () => { // כתוב בפנים את זה כי זה אומר שבתוך הפונקציה יהיה שימוש בפונקציה לחכות - await
-  if (usernameValid) {
-    setTempUsername (username)
-    await saveUserData()}
-  else {alert('Your username must be at least 5 characters long.');}}}>
-    <Text style={style.Confirm}>CONFIRM</Text>
+<TouchableOpacity
+  style={style.usernamebutton}
+  onPress={() => {
+  if (usernameValid) {    
+    router.push('/UserAuth/SignUp/SignFour')}
+  else {
+    alert('Username must be at least 5 characters');
+  }
+}}>
+<Text style={style.Confirm}>CONFIRM</Text>
 </TouchableOpacity>
-
-
 
 <Ionicons
   name="checkmark-circle"
   size={24}
-  color="#transparent"
-  style={[style.CheckIcon, usernameValid==true && style.ActiveCheckIcon]}
+  color={usernameValid ? '#AF52DE' : 'transparent'}
+  style={style.CheckIcon}
 />
-
-
-
-
 
 </>
 )}
@@ -159,4 +121,3 @@ ActiveCheckIcon:{
 })
 
 
-// העמוד השלישי - מכיל את העיצוב מהלאיאאוט ואת העיצוב שכתוב כאן - נועד על מנת לכתוב שם משתמש

@@ -3,7 +3,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 
-export default function SignThree() {
+export default function SignFour() {
   
 const router = useRouter(); 
 

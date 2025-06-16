@@ -1,8 +1,6 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-import { setTempEmail } from '../../../UserTempData';
-
 
 
 
@@ -40,8 +38,7 @@ return (
 
 <TouchableOpacity style={style.ConfirmButton} onPress={() => {
   if (validateEmail(email)) {
-  setTempEmail(email);
-  router.push('/UserAuth/SignUp/SignTwo')}
+  router.push({ pathname: '../SignTwo', params: { email }})}
   else {
   alert('Please enter a valid email address')
   console.log('Email Is Invalid'); }}}>
