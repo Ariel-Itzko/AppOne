@@ -2,11 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-
-
-import { useLocalSearchParams } from 'expo-router';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../Firebase/config';
+import { useUserStore } from '../../../publicData/UserStore';
 
 
 
@@ -21,10 +17,8 @@ const [password2, setPassword2] = useState('');
 const isItValid = password === password2 && password !== '';
 const reallyValid = password === password2 && isPasswordValid;
 const router = useRouter();
+const email = useUserStore(state => state.publicEmail);
 
-
-const { email } = useLocalSearchParams();  
-const safeEmail = Array.isArray(email) ? email[0] : email;
 
 
 
@@ -118,15 +112,8 @@ color="#808080"
 <TouchableOpacity style={style.SetPassword}
 onPress={ async ()  => {
   if (reallyValid) {
-try {
-        const userCredential = await createUserWithEmailAndPassword(auth, safeEmail, password);
-        console.log('User created:', userCredential.user);
-        router.push('/UserAuth/SignUp/SignThree');
-      } catch (error) {
-        console.error('Error creating user:', error);
-        alert('Failed to create user');
-      }
-    router.push('/UserAuth/SignUp/SignThree')}
+    console.log('Good Password');
+    }
   else {
     alert('Passwords do not match or are invalid')
     console.log('Passwords do not match or are invalid')}

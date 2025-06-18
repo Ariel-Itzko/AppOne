@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "325124214264",
+    "firebase_url": "https://appone-bd218-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "appone-bd218",
+    "storage_bucket": "appone-bd218.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325124214264:android:dfb78859fec8a56a48da0d",
+        "android_client_info": {
+          "package_name": "com.arielitzkovich.appone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325124214264-u46dq4m8fv94nhjdqi0f09og4p1rnc1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK3Zxem_A7_PvLdeGveBWSPeJoYNAp9ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325124214264-u46dq4m8fv94nhjdqi0f09og4p1rnc1p.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "325124214264-bj4nbup128irsntg5dda3cnpu47kvlrv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.arielitzkovich.appone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

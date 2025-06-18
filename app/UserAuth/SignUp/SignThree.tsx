@@ -2,6 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useUserStore } from '../../../publicData/UserStore';
 
 
 
@@ -10,6 +11,9 @@ export default function SignThree() {
   const [username, setUsername] = useState('');
   const usernameValid = username.length >= 5;
   const router = useRouter();
+  const setPublicUserName = useUserStore(state => state.setPublicUserName);
+
+
 
 return (
 <>
@@ -26,10 +30,13 @@ Nice! You have <Text style={style.SubTextPurple}>successfully{'\n'}created</Text
   value={username}
 />
 
+
+
 <TouchableOpacity
   style={style.usernamebutton}
   onPress={() => {
   if (usernameValid) {    
+    setPublicUserName (username)
     router.push('/UserAuth/SignUp/SignFour')}
   else {
     alert('Username must be at least 5 characters');
@@ -38,12 +45,14 @@ Nice! You have <Text style={style.SubTextPurple}>successfully{'\n'}created</Text
 <Text style={style.Confirm}>CONFIRM</Text>
 </TouchableOpacity>
 
+
 <Ionicons
   name="checkmark-circle"
   size={24}
-  color={usernameValid ? '#AF52DE' : 'transparent'}
+  color={usernameValid ? '#AF52DE' : 'black'}
   style={style.CheckIcon}
 />
+
 
 </>
 )}
@@ -112,9 +121,6 @@ CheckIcon:{
   alignSelf: 'center',
 },
 
-ActiveCheckIcon:{
-  color: '#AF52DE',
-}
 
 
 

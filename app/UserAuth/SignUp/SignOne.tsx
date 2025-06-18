@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useUserStore } from '../../../publicData/UserStore';
 
 
 
@@ -12,6 +13,8 @@ export default function SignOne() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email); }
   const router = useRouter();
+  const setPublicEmail = useUserStore(state => state.setPublicEmail);
+
 
 
 return (
@@ -38,7 +41,8 @@ return (
 
 <TouchableOpacity style={style.ConfirmButton} onPress={() => {
   if (validateEmail(email)) {
-  router.push({ pathname: '../SignTwo', params: { email }})}
+  setPublicEmail (email)
+  router.push('/UserAuth/SignUp/SignTwoTwo')}
   else {
   alert('Please enter a valid email address')
   console.log('Email Is Invalid'); }}}>
