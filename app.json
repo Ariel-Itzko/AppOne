@@ -7,18 +7,29 @@
     "icon": "./assets/images/icon.png",
     "scheme": "AppOne",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.arielitzkovich.appone"
+      "bundleIdentifier": "com.arielitzkovich.appone",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true,
-      "package": "com.arielitzkovich.appone"
+      "package": "com.arielitzkovich.appone",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",
