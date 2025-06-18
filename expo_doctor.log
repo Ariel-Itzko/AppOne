@@ -1,0 +1,2 @@
+
+  $ expo doctor is not supported in the local CLI, please use npx expo-doctor instead
